@@ -1,7 +1,9 @@
 # PL-PRIN-PROC
 PL PRIN PROC
-LL1 parsing and SLR parsing simulator
+LL1 parsing simulator and SLR parsing simulator
 
-LL1 parsing simulator 
+## LL1 parsing simulator 
+https://jamejunj.github.io/PL/LL1.html
 
-SLR parsing simulator
+## SLR parsing simulator
+https://jamejunj.github.io/PL/LL1.html
