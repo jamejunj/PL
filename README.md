@@ -6,4 +6,4 @@ LL1 parsing simulator and SLR parsing simulator
 https://jamejunj.github.io/PL/LL1.html
 
 ## SLR parsing simulator
-https://jamejunj.github.io/PL/LL1.html
+https://jamejunj.github.io/PL/SLR.html
