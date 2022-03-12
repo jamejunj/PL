@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLR Parsing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script defer src="SLR.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>SLR Parsing</h1>
+<hr>
+<div class="alert alert-info">Please Enter production (empty string use λ)</div>
+<textarea class="form-control" name="production"></textarea>
+<div class="card my-2">
+    <div class="card-body">
+        <h5 class="card-title">Rules</h5>
+        <div class="" id="disp-rules">
+            ...
+        </div>
+    </div>
+</div>
+<div class="card my-2">
+    <div class="card-body">
+        <h5 class="card-title">Items</h4>
+        <div class="" id="disp-items">
+            ...
+        </div>
+    </div>
+</div>
+<div class="row">
+<div class="col-md">
+    <div class="card my-2">
+        <div class="card-body">
+            <h5 class="card-title">NFA</h4>
+            <div class="" id="disp-nfa">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md">
+    <div class="card my-2">
+        <div class="card-body">
+            <h5 class="card-title">Transition</h4>
+            <div class="" id="disp-nfa-tran">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md">
+        <div class="card my-2">
+            <div class="card-body">
+                <h5 class="card-title">DFA</h4>
+                <div class="" id="disp-dfa">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="card my-2">
+            <div class="card-body">
+                <h5 class="card-title">DFA Transition</h4>
+                <div class="" id="disp-dfa-tran">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="card my-2">
+        <div class="card-body">
+            <h5 class="card-title">First & Follow</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Production</th>
+                                <th>First</th>
+                                <th>Follow</th>
+                            </tr>
+                        </thead>
+                        <tbody id="disp-ff">
+                            
+                        </tbody>
+                    </table>
+                </div>   
+        </div>
+    </div>
+<h4>SLR(1) Parsing Table</h4>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr id="parsetoken">
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody id="parsetable">
+        </tbody>
+    </table>
+</div>
+<h4>LR(0) Parsing Table</h4>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr id="lr0parsetoken">
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody id="lr0parsetable">
+            <button class="btn btn-primary" onclick="createLR0ParseTable()">Generate LR0 Parsing Table</button>
+        </tbody>
+    </table>
+</div>
+<div class="form-group my-1">
+<label for="test">Test</label>
+<input type="text" class="form-control" name="test"/>
+</div> 
+<div class="table-responsive">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Stack</th>
+                <th>Input</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="run">
+            
+        </tbody>
+    </table>
+</div>    
+<div class="card">
+<div class="card-body">
+    <p class="card-desc m-0">
+        SLR Parsing simulator &copy; 2022 Jirakit Jirapongwanich.
+    </p>
+</div>
+</div>
+</div>
+</body>
+</html>
